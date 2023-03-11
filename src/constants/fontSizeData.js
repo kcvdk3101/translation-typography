@@ -1,0 +1,16 @@
+export const fontSizeData = [
+  { value: 8, label: "8" },
+  { value: 12, label: "12" },
+  { value: 14, label: "14" },
+  { value: 16, label: "16" },
+  { value: 20, label: "20" },
+  { value: 24, label: "24" },
+  { value: 32, label: "32" },
+  { value: 40, label: "40" },
+  { value: 48, label: "48" },
+  { value: 64, label: "64" },
+  { value: 96, label: "96" },
+  { value: 120, label: "120" },
+  { value: 184, label: "184" },
+  { value: 280, label: "280" },
+];
