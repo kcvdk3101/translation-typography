@@ -2,7 +2,7 @@ import { Alert, Box, Container } from "@mantine/core";
 import { ReactElement, useContext, useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { load } from "webfontloader";
-import { getGoogleFonts } from "../../api/api";
+import { getGoogleFonts } from "../../api/google";
 import { capitalizeFirstLetterOfEachWord } from "../../utils/utils";
 import { modifySelectedLabel } from "./constants";
 import { Editor } from "./components/Editor";
@@ -13,7 +13,7 @@ import { useTranslationPageStyles } from "./useTranslationPageStyles";
 /**
  * Translation Page
  *
- * @returns { ReactElement } UI Translation Page
+ * @returns { ReactElement } Return Translation Page
  */
 export function TranslationPage() {
   const { classes } = useTranslationPageStyles();
@@ -57,24 +57,14 @@ export function TranslationPage() {
   }, [data, fontFamily]);
 
   return (
-    <>
-      {status === "error" ? (
-        <Container>
-          <Alert title="Bummer!" color="red">
-            {error.message}
-          </Alert>
-        </Container>
-      ) : (
-        <Box>
-          <Container fluid className={classes.toolbarContainer}>
-            <Toolbar fonts={fonts} styles={styles} />
-          </Container>
-          <Container mt="md" size="lg">
-            <Editor isLoading={status === "loading"} />
-          </Container>
-        </Box>
-      )}
-    </>
+    <Box>
+      <Container fluid py="xl" className={classes.toolbarContainer}>
+        <Toolbar fonts={fonts} styles={styles} />
+      </Container>
+      <Container mt="md" size="lg">
+        <Editor isLoading={status === "loading"} />
+      </Container>
+    </Box>
   );
 }
 

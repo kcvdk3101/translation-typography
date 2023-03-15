@@ -1,6 +1,20 @@
 {
   "name": "translation-typography",
   "version": "0.1.0",
+  "description": "Combining Google Translate and Google Fonts",
+  "author": {
+    "name": "Khoi Vuong",
+    "email": "kcvdk2000@gmail.com",
+    "url": "https://github.com/kcvdk3101"
+  },
+  "keywords": [
+    "ReactJS",
+    "Mantine",
+    "React Query",
+    "Google",
+    "Google Fonts",
+    "Google Translate"
+  ],
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
