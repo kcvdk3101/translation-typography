@@ -10,6 +10,7 @@ import {
 } from "../../../assets/icons";
 import { CustomColorPicker } from "../../../components/ColorPicker/CustomColorPicker";
 import { fontSizeData } from "../../../constants/fontSizeData";
+import { filterSelectedItem } from "../../../utils/utils";
 import { TranslationContext } from "../context/TranslationContext";
 import { useTranslationPageStyles } from "../useTranslationPageStyles";
 
@@ -40,7 +41,7 @@ export function Toolbar({ fonts, styles }) {
         {...others}
         ref={ref}
         style={{
-          fontFamily: value,
+          fontFamily: `${value}, sans-serif`,
           fontSize: 14,
         }}
       >
@@ -87,9 +88,6 @@ export function Toolbar({ fonts, styles }) {
   );
   CustomSelectFontStyle.displayName = "CustomSelectFontStyle";
 
-  const filter = (value, item) =>
-    item.label.toLowerCase().includes(value.toLowerCase().trim());
-
   return (
     <Container size="lg">
       <Grid justify="flex-start" align="center">
@@ -102,7 +100,7 @@ export function Toolbar({ fonts, styles }) {
             searchable
             value={fontFamily}
             data={fonts}
-            filter={filter}
+            filter={filterSelectedItem}
             itemComponent={CustomSelectFontFamily}
             nothingFound="Font is not found"
             styles={(theme) => ({
@@ -131,7 +129,7 @@ export function Toolbar({ fonts, styles }) {
             className={`${classes.select} ${classes.input}`}
             value={fontStyle}
             data={styles}
-            filter={filter}
+            filter={filterSelectedItem}
             itemComponent={CustomSelectFontStyle}
             nothingFound="Font style is not found"
             styles={(theme) => ({

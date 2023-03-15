@@ -6,24 +6,26 @@ export const useTranslationPageStyles = createStyles((theme) => ({
       theme.colorScheme === "light"
         ? theme.colors.gray[1]
         : theme.colors.dark[5],
-    padding: "32px 0px",
-  },
-
-  editorContainer: {
-    padding: "28px 16px",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: theme.colors.gray[4],
-    borderRadius: 8,
   },
 
   editor: {
-    width: "100%",
+    flex: 1,
+    padding: 20,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor:
+      theme.colorScheme === "light" ? theme.colors.gray[4] : "transparent",
     outline: "none",
-    border: "none",
     transitionProperty: "opacity, transform",
     transitionDuration: 350,
     resize: "none",
+  },
+
+  counter: {
+    position: "absolute",
+    bottom: 10,
+    left: 10,
   },
 
   btnFill: {
